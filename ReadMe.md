@@ -8,7 +8,7 @@ The Critic judges either the fake and condition pair or the real and condition p
 
 ## Results
 The model is able to generate realistic solar power curves. The model is trained on 300 epochs with a batch size of 64.
-<img src="imgs/real_fake_solar.png" width="400" >
+<img src="imgs/real_fake_solar.png" width="800" >
 
 ## Further Work
 - Implementing a more complex model
