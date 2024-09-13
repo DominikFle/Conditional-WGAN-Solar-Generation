@@ -1,0 +1,27 @@
+W_clip: 0.01
+batch_size: 256
+condition_size: 16
+critic_to_gen_overtraining_factor: 4
+hidden_layers_size_Critic:
+- !!python/tuple
+  - 40
+  - 128
+- !!python/tuple
+  - 128
+  - 256
+- !!python/tuple
+  - 256
+  - 64
+hidden_layers_size_Generator:
+- !!python/tuple
+  - 32
+  - 128
+- &id001 !!python/tuple
+  - 128
+  - 128
+- *id001
+input_dim: 32
+lr: 0.0005
+output_dim: 24
+rand_size: 16
+vis_every: 100

@@ -6,6 +6,8 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 
+import pytorch_lightning as pl
+
 
 def create_condition_vector(
     solar_or_wind: int = 0, day_or_month: int = 0, month: int = 1, return_2d=False

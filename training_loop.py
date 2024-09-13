@@ -34,19 +34,19 @@ model = WGAN(
     batch_size=batch_size,
     vis_every=100,
 )
-model_path = "/content/drive/MyDrive/AgoraData"
 print(summary(model, input_size=(batch_size, condition_size)))
 plt.rcParams["figure.figsize"] = (2, 2)
-max_epochs = 140
+max_epochs = 300
 trainer = pl.Trainer(
     accelerator="auto",
     devices=1,
     max_epochs=max_epochs,
     check_val_every_n_epoch=10,
 )
+epochs_load = 200
 ckpth = None
-ckpth = f"/stored_models/WGAN-Electricity-Solar-Only-{max_epochs}.ckpt"
+ckpth = f"stored_models/WGAN-Electricity-Solar-Only-{epochs_load}.ckpt"
 trainer.fit(model, dm, ckpt_path=ckpth)
 trainer.save_checkpoint(
-    filepath=f"/stored_models/WGAN-Electricity-Solar-Only-{max_epochs}.ckpt"
+    filepath=f"stored_models/WGAN-Electricity-Solar-Only-{max_epochs}.ckpt"
 )
